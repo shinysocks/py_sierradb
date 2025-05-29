@@ -1,5 +1,0 @@
-db_host = "my-sierra-db.iii.com"
-port = "1032"
-sierra_database = "iii"
-sierra_user = "my-sierra-user"
-sierra_user_password = "my-sierra-user-password"

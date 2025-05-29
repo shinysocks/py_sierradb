@@ -1,11 +1,15 @@
+.SILENT:
+
 all: run
 
 run: setup
-	printf "running"
+	python3 SamplePythonScript.py
 
 setup:
-	# python3 -m pip install venv
-	rm -rf venv
 	python3 -m venv venv
-	source venv/bin/activate
+	. venv/bin/activate
 	pip3 install psycopg2-binary
+	echo "successfully installed virtual environment"
+
+clean:
+	rm -rf venv

@@ -8,8 +8,30 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 sys.path.insert(0, basedir + '/../pymodules')
 sys.path.insert(0, basedir)
 
-from SierraDB import db_host, port, sierra_database, sierra_user, sierra_user_password
-from SQL import sql_query
+
+
+
+db_host = "my-sierra-db.iii.com"
+port = "1032"
+sierra_database = "iii"
+sierra_user = "my-sierra-user"
+sierra_user_password = "my-sierra-user-password"
+
+
+
+
+sql_query = """
+    SET search_path = 'sierra_view';
+    SELECT
+        code AS "Location Code",
+        name AS "Location Name"
+    FROM location_myuser
+    ORDER BY
+        "Location Code" DESC
+    LIMIT 15
+    ;
+"""
+
 #
 # Open a connection to the Sierra database and run the SQL query
 #
